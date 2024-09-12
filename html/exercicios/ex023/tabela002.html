@@ -12,10 +12,18 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
+        }
+        
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgrey;
         }
 
         td, th {
-            border: 1px solid black;
+            border: 1px solid rgb(32, 32, 32);
             padding: 10px;
         }
 
@@ -28,6 +36,17 @@
             color: white;
         }
 
+        thead > tr > th { /* deixar a barra de TH colada com a barra de rolagem */
+            position: sticky;
+            top: -1px;
+            background-color: rgb(32, 32, 32);
+        }
+
+        tbody > tr:nth-child(2n){
+            background-color: lightgrey; /*tr:nth-child(2n) ira fazer com que marque como lightgrey de 2 em 2 linhas 
+            Sendo possivel utilizar como par ou impar com odd ou even */
+        }
+
 
     </style>
 </head>
@@ -36,6 +55,7 @@
     <!--
         ANATOMIA PARA TABELAS
         TABLE
+            CAPTION "LEGENDA"
             THEAD
                 TR, TD, TH
             TBODY
@@ -44,10 +64,11 @@
                 TR, TD, TH
     -->
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
         <tbody>
@@ -162,8 +183,8 @@
         </tbody>
         <tfoot>
             <tr>
-                <td>Total de Habitantes</td>
-                <td>0000</td>
+                <th scope="row">Total de Habitantes</th>
+                <th class="numero"><strong>0000</strong></th>
             </tr>
         </tfoot>
     </table>
