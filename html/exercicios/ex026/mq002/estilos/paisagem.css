@@ -1,0 +1,8 @@
+@charset "UTF-8"
+
+/* Configurações de Paisagem */
+
+body{
+    background-image: url(../estilos/paisagem.css);
+    background-position: left bottom;
+}
